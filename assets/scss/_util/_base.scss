@@ -1,0 +1,25 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+
+  .content {
+    flex: 1;
+  }
+}
+
+.container {
+  margin: 0 auto;
+  width: $page-width;
+}

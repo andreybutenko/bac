@@ -1,0 +1,137 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  max-width: 100vw;
+  overflow-x: hidden; }
+
+.wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row; }
+  .wrapper .content {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1; }
+
+.container {
+  margin: 0 auto;
+  width: 750px; }
+
+body {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #3d3d3d; }
+
+h1, h2, h3, h4 {
+  font-family: 'Encode Sans', sans-serif;
+  margin-top: 1em;
+  margin-bottom: 0.4em; }
+
+h1 {
+  color: #4b2e83;
+  font-family: 'Encode Sans Condensed', sans-serif;
+  text-transform: uppercase;
+  font-size: 50px;
+  font-weight: 700; }
+  h1.title {
+    margin-top: 1rem; }
+
+p {
+  margin-bottom: 0.5em; }
+  p.intro {
+    font-family: 'Encode Sans Condensed', sans-serif;
+    font-size: 24px;
+    line-height: 1.5; }
+
+ul {
+  margin-bottom: 0.5em;
+  margin-left: 1.5em; }
+  ul li {
+    margin-bottom: 0.5em; }
+
+.header {
+  height: 90px;
+  width: 100vw;
+  background-color: #4b2e83;
+  -webkit-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.75);
+          box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.75);
+  position: relative; }
+  .header .container {
+    height: 100%;
+    width: 1170px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center; }
+  .header .logo {
+    height: 80px;
+    -ms-flex-item-align: end;
+        align-self: flex-end; }
+  .header .wordmark {
+    height: 20px;
+    margin-top: 10px;
+    margin-left: 24px; }
+
+.hero {
+  width: 100vw;
+  height: 450px;
+  background-image: url("/assets/img/lander-background-crop.png");
+  background-position: center;
+  background-repeat: no-repeat; }
+
+.nav {
+  position: -webkit-sticky;
+  position: sticky;
+  -ms-flex-item-align: start;
+      align-self: flex-start;
+  margin-top: calc(1rem + 16px);
+  top: 0;
+  height: 100vh;
+  z-index: 999;
+  max-width: 350px;
+  background-color: #efefef; }
+  .nav::stuck {
+    background-color: #000; }
+  .nav .nav-header {
+    font-family: 'Encode Sans Condensed', sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-align: center;
+    background-color: #4b2e83;
+    color: white;
+    padding: 16px; }
+  .nav ul {
+    list-style: none;
+    margin-left: 0;
+    border-right: 1px solid #d9d9d9; }
+    .nav ul li {
+      margin-bottom: 0;
+      font-family: 'Encode Sans Condensed', sans-serif; }
+      .nav ul li.label {
+        background-color: #444444;
+        color: white;
+        padding: 4px 16px; }
+      .nav ul li a {
+        display: block;
+        color: inherit;
+        text-decoration: none;
+        padding: 8px 16px;
+        -webkit-transition: all 100ms;
+        transition: all 100ms; }
+        .nav ul li a:hover {
+          background-color: #d9d9d9; }

@@ -11,11 +11,11 @@
       </div>
     </div>
     <div class="wrapper">
-      <div class="nav">
+      <nav data-gumshoe-header class="nav">
         <div class="nav-header">
           <span>Navigation</span>
         </div>
-        <ul>
+        <ul data-gumshoe>
           <li class="label">Intro</li>
           <li><a href="#auxiliary">HFS: Auxiliary and Self-Sustaining</a></li>
           <li class="label">Common Questions</li>
@@ -24,7 +24,7 @@
           <li><a href="#retaildining">Why does HFS have a retail dining model?</a></li>
           <li class="label">The Numbers</li>
         </ul>
-      </div>
+      </nav>
       <div class="content">
         <div class="hero"></div>
         <div class="container overlap">
@@ -33,7 +33,7 @@
             Many students have questions about HFS budgeting. What do my housing payments go towards? Why are rates the way they are? It is important for students to understand the answers to these questions. This site is a quick intro to HFS budgeting!
           </p>
 
-          <h2>HFS: Auxiliary and Self-Sustaining</h2>
+          <h2 id="auxiliary">HFS: Auxiliary and Self-Sustaining</h2>
           <p>
             HFS is an <b>independent department</b> of the University of Washington. It must follow all University policies and help offset administrative overhead, but it receives no support for it's operations. That means it must keep a close eye on where money is going, because there's nobody to bail them out if funds run out!
           </p>
@@ -50,7 +50,7 @@
 
           <h1>Common Questions</h1>
 
-          <h2>What distinguishes HFS from off-campus housing?</h2>
+          <h2 id="oncampus">What distinguishes HFS from off-campus housing?</h2>
           <p>
             Since HFS is part of the University of Washington, everything it does supports the University's mission by contributing to student success. Students living on-campus have access to many great resources that are simply not possible in off-campus housing.
           </p>
@@ -65,7 +65,7 @@
             <li>HFS hires students to give them opportunities to earn money and learn through work experience.</li>
           </ul>
 
-          <h2>Why do I have to have a meal plan?</h2>
+          <h2 id="mealplan">Why do I have to have a meal plan?</h2>
           <p>
             HFS operates 37 locations around campus and requires meal plans for most 9-month residents. Why?
           </p>
@@ -75,7 +75,7 @@
             <li>To enable students to adequately plan and pay for food.</li>
           </ul>
 
-          <h2>Why does HFS have a retail dining model?</h2>
+          <h2 id="retaildining">Why does HFS have a retail dining model?</h2>
           <p>
             The retail dining model gives students a variety of food options including meeting special dietary needs, flexibility in times of operations, and portability in providing locations to use the dining plan on-campus.
           </p>
@@ -95,5 +95,10 @@
         </div>
       </div>
     </div>
+
+    <script src="/assets/js/gumshoe.min.js"></script>
+    <script>
+    	gumshoe.init();
+    </script>
   </body>
 </html>

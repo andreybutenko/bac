@@ -136,6 +136,8 @@ ul {
     .nav ul li {
       margin-bottom: 0;
       font-family: 'Encode Sans Condensed', sans-serif; }
+      .nav ul li.active a {
+        color: #007bce; }
       .nav ul li.label {
         background-color: #444444;
         color: white;

@@ -36,6 +36,10 @@
       margin-bottom: 0;
       font-family: 'Encode Sans Condensed', sans-serif;
 
+      &.active a {
+        color: $color-blue;
+      }
+
       &.label {
         background-color: $color-gray-dark;
         color: white;

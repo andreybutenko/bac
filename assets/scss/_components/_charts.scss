@@ -1,0 +1,103 @@
+.chart {
+  margin-bottom: 3em !important;
+
+  .chart-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  h3 {
+    font-family: 'Encode Sans Condensed', sans-serif;
+    text-transform: uppercase;
+  }
+
+  &.chart-diminished {
+    width: 100%;
+    max-width: #{$page-width * 0.7};
+    margin: 0 auto;
+  }
+
+  &.chart-tappable path.ct-slice-donut,
+  &.chart-tappable text.ct-label {
+    cursor: pointer;
+    user-select: none;
+  }
+}
+
+.chart-more-info {
+  background-color: $color-gray-light;
+  padding: 16px;
+
+  h3 {
+    margin: 0;
+  }
+
+  .hidden {
+    display: none;
+  }
+}
+
+.ct-chart-donut text {
+  font-family: 'Encode Sans Condensed', sans-serif;
+  fill: black;
+  font-weight: 900;
+}
+
+.revenue-chart {
+  .student-housing path {
+    stroke: nth($chart-colors, 1);
+  }
+
+  .food-sales path {
+    stroke: nth($chart-colors, 2);
+  }
+
+  .other path {
+    stroke: nth($chart-colors, 3);
+  }
+}
+
+.revenue-other-chart {
+  .conference-revenue path {
+    stroke: nth($chart-colors, 4);
+  }
+
+  .catering path {
+    stroke: nth($chart-colors, 5);
+  }
+
+  .athletics path {
+    stroke: nth($chart-colors, 6);
+  }
+
+  .forfeitures-and-fees path {
+    stroke: nth($chart-colors, 7);
+  }
+
+  .laundry path {
+    stroke: nth($chart-colors, 8);
+  }
+
+  .vending-commissions path {
+    stroke: nth($chart-colors, 9);
+  }
+
+  .other-food-service path {
+    stroke: nth($chart-colors, 1);
+  }
+
+  g text:nth-of-type(6) {
+    transform: translateY(-0.5em);
+  }
+
+  g text:nth-of-type(7) {
+    transform: translateY(-1.6em);
+  }
+}

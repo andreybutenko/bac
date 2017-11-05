@@ -2,13 +2,13 @@
   position: -webkit-sticky;
   position: sticky;
   align-self: flex-start;
-  margin-top: calc(1rem + 16px);
   top: 0;
   height: 100vh;
   // width: calc((100% - #{$page-width}) / 2);
-  z-index: 999;
   max-width: $nav-width;
   background-color: #efefef;
+  margin-top: #{-1 * $header-height};
+  box-shadow: 5px 5px 5px 0px rgba(0,0,0,0.2);
 
   &::stuck {
     background-color: #000;
@@ -22,12 +22,15 @@
     background-color: $color-purple;
     color: white;
     padding: 16px;
+    height: $header-height;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
   }
 
   ul {
     list-style: none;
     margin-left: 0;
-    border-right: 1px solid $color-gray-light;
 
     li {
       margin-bottom: 0;

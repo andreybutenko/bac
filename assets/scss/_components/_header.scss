@@ -2,7 +2,8 @@
   height: $header-height;
   width: 100vw;
   background-color: $color-purple;
-  box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.75);
+  box-shadow: 0px 5px 5px 0px rgba(0,0,0,0.4);
+  z-index: 999;
   position: relative;
 
   .container {

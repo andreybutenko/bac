@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer')
+var concat = require('gulp-concat');
 
 gulp.task('sass', function () {
   return gulp.src('./assets/scss/**/*.scss')
@@ -11,4 +12,14 @@ gulp.task('sass', function () {
 
 gulp.task('sass:watch', function () {
   gulp.watch('./assets/scss/**/*.scss', ['sass']);
+});
+
+gulp.task('scripts', function () {
+  return gulp.src(['./assets/scripts/util.js', './assets/scripts/*.js'])
+    .pipe(concat('scripts.js'))
+    .pipe(gulp.dest('./assets/js/'));
+});
+
+gulp.task('scripts:watch', function () {
+  gulp.watch('./assets/scripts/*.js', ['scripts']);
 });

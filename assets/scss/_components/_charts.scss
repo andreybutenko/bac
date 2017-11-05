@@ -16,6 +16,7 @@
   h3 {
     font-family: 'Encode Sans Condensed', sans-serif;
     text-transform: uppercase;
+    text-align: center;
   }
 
   &.chart-diminished {
@@ -44,60 +45,37 @@
   }
 }
 
-.ct-chart-donut text {
+.ct-chart-donut text,
+.ct-chart-bar text {
   font-family: 'Encode Sans Condensed', sans-serif;
   fill: black;
   font-weight: 900;
 }
 
-.revenue-chart {
-  .student-housing path {
-    stroke: nth($chart-colors, 1);
-  }
+.adjacent-charts {
+  display: flex;
+  flex-direction: row;
 
-  .food-sales path {
-    stroke: nth($chart-colors, 2);
-  }
-
-  .other path {
-    stroke: nth($chart-colors, 3);
+  div {
+    flex: 1
   }
 }
 
-.revenue-other-chart {
-  .conference-revenue path {
-    stroke: nth($chart-colors, 4);
+.bar-chart {
+  margin-bottom: 3em !important;
+  height: #{$page-width * 0.7};
+
+  .ct-bar {
+    stroke-width: 70px;
   }
 
-  .catering path {
-    stroke: nth($chart-colors, 5);
+  .ct-bar-label {
+    transform: translateX(-20px) translateY(10px);
   }
 
-  .athletics path {
-    stroke: nth($chart-colors, 6);
-  }
-
-  .forfeitures-and-fees path {
-    stroke: nth($chart-colors, 7);
-  }
-
-  .laundry path {
-    stroke: nth($chart-colors, 8);
-  }
-
-  .vending-commissions path {
-    stroke: nth($chart-colors, 9);
-  }
-
-  .other-food-service path {
-    stroke: nth($chart-colors, 1);
-  }
-
-  g text:nth-of-type(6) {
-    transform: translateY(-0.5em);
-  }
-
-  g text:nth-of-type(7) {
-    transform: translateY(-1.6em);
+  &.chart-tappable line.ct-bar,
+  &.chart-tappable text.ct-bar-label {
+    cursor: pointer;
+    user-select: none;
   }
 }

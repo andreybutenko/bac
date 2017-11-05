@@ -1,0 +1,112 @@
+
+.revenue-chart {
+  .student-housing path {
+    stroke: nth($chart-colors, 1);
+  }
+
+  .food-sales path {
+    stroke: nth($chart-colors, 2);
+  }
+
+  .other path {
+    stroke: nth($chart-colors, 3);
+  }
+}
+
+.revenue-other-chart {
+  .conference-revenue path {
+    stroke: nth($chart-colors, 4);
+  }
+
+  .catering path {
+    stroke: nth($chart-colors, 5);
+  }
+
+  .athletics path {
+    stroke: nth($chart-colors, 6);
+  }
+
+  .forfeitures-and-fees path {
+    stroke: nth($chart-colors, 7);
+  }
+
+  .laundry path {
+    stroke: nth($chart-colors, 8);
+  }
+
+  .vending-commissions path {
+    stroke: nth($chart-colors, 9);
+  }
+
+  g text:nth-of-type(6) {
+    transform: translateY(-0.5em);
+  }
+
+  .other-food-service path {
+    stroke: nth($chart-colors, 1);
+  }
+
+  g text:nth-of-type(7) {
+    transform: translateY(-1.6em);
+  }
+}
+
+.expenses-general-chart  {
+  .operating-expenses path {
+    stroke: nth($chart-colors, 1);
+  }
+
+  .debt-service path {
+    stroke: nth($chart-colors, 2);
+  }
+
+  .capital-improvements path {
+    stroke: nth($chart-colors, 3);
+  }
+}
+
+.expenses-operating-chart  {
+  .salaries-and-benefits path {
+    stroke: nth($chart-colors, 1);
+  }
+
+  .cost-of-food path {
+    stroke: nth($chart-colors, 2);
+  }
+
+  .indirect-expenses path {
+    stroke: nth($chart-colors, 3);
+  }
+
+  .utilities path {
+    stroke: nth($chart-colors, 4);
+  }
+
+  .contract-services path {
+    stroke: nth($chart-colors, 5);
+  }
+
+  .supplies-and-materials path {
+    stroke: nth($chart-colors, 6);
+  }
+
+  .repairs-and-maintainence path {
+    stroke: nth($chart-colors, 7);
+  }
+
+  g text:nth-of-type(7) {
+    transform: translateY(-0.5em);
+  }
+
+  .other path {
+    stroke: nth($chart-colors, 8);
+  }
+
+  g text:nth-of-type(8) {
+    transform: translateY(-1.6em);
+  }
+}
+
+.housing-revenue-chart .ct-bar-label:nth-of-type(4) {
+  transform: translateX(-20px);
+}

@@ -25,7 +25,10 @@
           <li><a href="#mealplan">Why do I have to have a meal plan?</a></li>
           <li><a href="#retaildining">Why does HFS have a retail dining model?</a></li>
           <li class="label">The Numbers</li>
-          <li><a href="#revenue">Revenue</a></li>
+          <li><a href="#revenue">Total Revenue</a></li>
+          <li><a href="#expenses">Total Expenses</a></li>
+          <li><a href="#housing">Housing Expenses</a></li>
+          <li><a href="#food">Food Expenses</a></li>
         </ul>
       </nav>
       <div class="content">
@@ -93,25 +96,59 @@
 
           <h1>The Numbers</h1>
 
-          <h2 id="revenue">Revenue</h2>
+          <h2 id="revenue">Total Revenue</h2>
+
           <div class="revenue-chart ct-perfect-fourth chart chart-diminished chart-tappable">
             <div class="chart-content">
-              <h3>Revenues</h3>
+              <h3>Revenue<br/>Overview</h3>
             </div>
           </div>
 
           <div class="revenue-other-chart ct-perfect-fourth chart chart-diminished chart-tappable">
             <div class="chart-content">
               <div>
-                <h3 style="text-align: center">Other Revenue<br/>Breakdown</h3>
+                <h3>Other Revenue<br/>Breakdown</h3>
               </div>
             </div>
           </div>
 
           <div class="chart-more-info">
             <h3 id="revenue-info-placeholder">Tap any section of the revenue charts to read more info here!</h3>
-            <h3 id="revenue-info-title-container" class="hidden"><span id="revenue-info-title">Conference Revenue</span>: <span id="revenue-info-value">$6,717,500</span></h3>
-            <p id="revenue-info-desc" class="hidden">UW hosts interns for various companies in the Seattle area during the summer, offsetting your housing costs!</p>
+            <h3 id="revenue-info-title-container" class="hidden"><span id="revenue-info-title"></span>: <span id="revenue-info-value"></span></h3>
+            <p id="revenue-info-desc" class="hidden"></p>
+          </div>
+
+          <h2 id="expenses">Total Expenses</h2>
+
+          <div class="expenses-general-chart ct-perfect-fourth chart chart-diminished chart-tappable">
+            <div class="chart-content">
+              <h3>Expense<br/>Overview</h3>
+            </div>
+          </div>
+
+          <div class="expenses-operating-chart ct-perfect-fourth chart chart-diminished chart-tappable">
+            <div class="chart-content">
+              <h3>Operating Expenses<br/>Breakdown</h3>
+            </div>
+          </div>
+
+          <div class="chart-more-info">
+            <h3 id="expenses-info-placeholder">Tap any section of the expenses charts to read more info here!</h3>
+            <h3 id="expenses-info-title-container" class="hidden"><span id="expenses-info-title"></span>: <span id="expenses-info-value"></span></h3>
+            <p id="expenses-info-desc" class="hidden"></p>
+          </div>
+
+          <h2 id="housing">Housing Revenues and Expenses</h2>
+
+          <div class="adjacent-charts">
+            <div class="housing-revenue-chart bar-chart chart-tappable"></div>
+            <div class="housing-expenses-chart bar-chart chart-tappable"></div>
+          </div>
+
+          <div class="chart-more-info">
+            <h3 id="housing-info-placeholder">Tap any section of the housing charts to read more info here!</h3>
+            <h3 id="housing-info-title-container" class="hidden"><span id="housing-info-title"></span>: <span id="housing-info-value"></span></h3>
+            <p id="housing-info-desc" class="hidden"></p>
           </div>
         </div>
       </div>
@@ -120,120 +157,6 @@
     <script src="/assets/js/gumshoe.min.js"></script>
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
-    <script>
-    	gumshoe.init();
-
-      function toCase(x) {
-        return x.replace(/\s+/g, '-').toLowerCase();
-      }
-
-      function onHover(prefix, dataset, id) {
-        const data = dataset.data.filter(data => toCase(data.name) == id)[0];
-
-        if(typeof(data) != 'undefined') {
-          document.getElementById(prefix + '-placeholder').classList.add('hidden');
-          document.getElementById(prefix + '-title-container').classList.remove('hidden');
-          document.getElementById(prefix + '-desc').classList.remove('hidden');
-
-          document.getElementById(prefix + '-title').innerHTML = data.name;
-          document.getElementById(prefix + '-value').innerHTML = dataset.format(data.value);
-          document.getElementById(prefix + '-desc').innerHTML = data.desc || '';
-        }
-      }
-
-      function onHoverPlugin(prefix, data) {
-        return function onHoverPlugin(chart) {
-          const $chart = chart.container;
-          $chart.addEventListener('mousedown', e => e.target.localName == 'text' ?
-            onHover(prefix, data, toCase(e.target.textContent.split(':')[0])) :
-            onHover(prefix, data, e.target.parentElement.classList.item(1)))
-        }
-      }
-
-      function generatePieData(arr) {
-        return {
-          labels: arr.map(data => data.name),
-          series: arr.map(data => {
-            return {
-              name: data.name,
-              className: toCase(data.name),
-              value: data.value
-            }
-          })
-        }
-      }
-
-      function withCommas(x) {
-        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-      }
-
-      const revenueData = {
-        format: x => x + '%',
-        data: [
-          {
-            name: 'Student Housing',
-            value: 66,
-            desc: 'Total revenues for student housing are $81,972,921.'
-          },
-          {
-            name: 'Food Sales',
-            value: 21,
-            desc: 'Total revenues for student housing are $46,868,880.'
-          },
-          {
-            name: 'Other',
-            value: 13,
-            desc: 'Check the breakdown for more information on other revenue sources!'
-          }
-        ]
-      }
-      const revenuePieData = generatePieData(revenueData.data);
-      new Chartist.Pie('.revenue-chart',
-        revenuePieData, {
-          donut: true,
-          plugins: [onHoverPlugin('revenue-info', revenueData)],
-          labelInterpolationFnc: (label, index) => {
-            return label + ': ' + revenueData.format(revenueData.data[index].value)
-          }
-        }
-      )
-
-      const revenueOtherData = {
-        format: x => '$' + withCommas(x),
-        data: [
-          {
-            name: 'Conference Revenue',
-            value: 6717500,
-            desc: 'UW hosts interns for various companies in the Seattle area during the summer, offsetting your housing costs!'
-          },
-          { name: 'Catering', value: 4081990 },
-          { name: 'Athletics', value: 1278820 },
-          {
-            name: 'Forfeitures and Fees',
-            value: 1266748,
-            desc: 'HFS charges internal UW dining units a 33% fee to help operate dining plans.'
-          },
-          { name: 'Laundry', value: 451830 },
-          { name: 'Vending Commissions', value: 678474 },
-          { name: 'Other Food Service', value: 60420 }
-        ]
-      }
-      const revenueOtherPieData = generatePieData(revenueOtherData.data);
-      new Chartist.Pie('.revenue-other-chart',
-        revenueOtherPieData, {
-          donut: true,
-          plugins: [onHoverPlugin('revenue-info', revenueOtherData)],
-          labelInterpolationFnc: (label, index) => {
-            return label + ': ' + revenueOtherData.format(revenueOtherData.data[index].value)
-          }
-        },
-        [
-          ['screen and (max-width: 500px)', {
-            showLabel: false,
-            donutWidth: 20
-          }]
-        ]
-      )
-    </script>
+    <script src="/assets/js/scripts.js"></script>
   </body>
 </html>

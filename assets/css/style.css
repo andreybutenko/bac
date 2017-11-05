@@ -85,7 +85,8 @@ ul {
             align-items: center; }
   .chart h3 {
     font-family: 'Encode Sans Condensed', sans-serif;
-    text-transform: uppercase; }
+    text-transform: uppercase;
+    text-align: center; }
   .chart.chart-diminished {
     width: 100%;
     max-width: 525px;
@@ -106,10 +107,40 @@ ul {
   .chart-more-info .hidden {
     display: none; }
 
-.ct-chart-donut text {
+.ct-chart-donut text,
+.ct-chart-bar text {
   font-family: 'Encode Sans Condensed', sans-serif;
   fill: black;
   font-weight: 900; }
+
+.adjacent-charts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row; }
+  .adjacent-charts div {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1; }
+
+.bar-chart {
+  margin-bottom: 3em !important;
+  height: 525px; }
+  .bar-chart .ct-bar {
+    stroke-width: 70px; }
+  .bar-chart .ct-bar-label {
+    -webkit-transform: translateX(-20px) translateY(10px);
+            transform: translateX(-20px) translateY(10px); }
+  .bar-chart.chart-tappable line.ct-bar,
+  .bar-chart.chart-tappable text.ct-bar-label {
+    cursor: pointer;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none; }
 
 .revenue-chart .student-housing path {
   stroke: #1abc9c; }
@@ -138,16 +169,61 @@ ul {
 .revenue-other-chart .vending-commissions path {
   stroke: #95a5a6; }
 
-.revenue-other-chart .other-food-service path {
-  stroke: #1abc9c; }
-
 .revenue-other-chart g text:nth-of-type(6) {
   -webkit-transform: translateY(-0.5em);
           transform: translateY(-0.5em); }
 
+.revenue-other-chart .other-food-service path {
+  stroke: #1abc9c; }
+
 .revenue-other-chart g text:nth-of-type(7) {
   -webkit-transform: translateY(-1.6em);
           transform: translateY(-1.6em); }
+
+.expenses-general-chart .operating-expenses path {
+  stroke: #1abc9c; }
+
+.expenses-general-chart .debt-service path {
+  stroke: #f1c40f; }
+
+.expenses-general-chart .capital-improvements path {
+  stroke: #3498db; }
+
+.expenses-operating-chart .salaries-and-benefits path {
+  stroke: #1abc9c; }
+
+.expenses-operating-chart .cost-of-food path {
+  stroke: #f1c40f; }
+
+.expenses-operating-chart .indirect-expenses path {
+  stroke: #3498db; }
+
+.expenses-operating-chart .utilities path {
+  stroke: #9b59b6; }
+
+.expenses-operating-chart .contract-services path {
+  stroke: #34495e; }
+
+.expenses-operating-chart .supplies-and-materials path {
+  stroke: #e74c3c; }
+
+.expenses-operating-chart .repairs-and-maintainence path {
+  stroke: #2ecc71; }
+
+.expenses-operating-chart g text:nth-of-type(7) {
+  -webkit-transform: translateY(-0.5em);
+          transform: translateY(-0.5em); }
+
+.expenses-operating-chart .other path {
+  stroke: #d35400; }
+
+.expenses-operating-chart g text:nth-of-type(8) {
+  -webkit-transform: translateY(-1.6em);
+          transform: translateY(-1.6em); }
+
+.housing-revenue-chart .ct-bar-label:nth-of-type(4) {
+  -webkit-transform: translateX(-20px);
+          transform: translateX(-20px); }
 
 .header {
   height: 90px;

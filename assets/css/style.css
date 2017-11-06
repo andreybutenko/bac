@@ -19,8 +19,7 @@ html, body {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
-          flex-direction: row;
-  padding-bottom: 20vh; }
+          flex-direction: row; }
   .wrapper .content {
     -webkit-box-flex: 1;
         -ms-flex: 1;
@@ -46,6 +45,8 @@ h1 {
   font-family: 'Encode Sans Condensed', sans-serif;
   text-transform: uppercase;
   margin-bottom: -0.4em; }
+  h1.include-margin {
+    margin-bottom: 0.4em; }
   h1.title {
     margin-top: 1rem;
     margin-bottom: 0.4em;
@@ -65,6 +66,26 @@ ul {
   margin-left: 1.5em; }
   ul li {
     margin-bottom: 0.5em; }
+
+.boundless-nav {
+  font-family: 'Encode Sans Condensed', sans-serif;
+  list-style: none;
+  margin-left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+  .boundless-nav li {
+    margin-bottom: 0; }
+    .boundless-nav li a {
+      text-decoration: none;
+      color: white; }
+      .boundless-nav li a::after {
+        content: '/';
+        opacity: 0.5;
+        margin: 0 5px; }
 
 .chart {
   margin-bottom: 3em !important; }
@@ -225,6 +246,35 @@ ul {
   -webkit-transform: translateX(-20px);
           transform: translateX(-20px); }
 
+.footer {
+  height: 425px;
+  width: 100vw;
+  background-image: url("/assets/img/uw-footer.jpg");
+  background-position: bottom;
+  background-repeat: no-repeat;
+  background-size: cover;
+  margin-top: 24px;
+  border-top: 7px solid #d9d9d9;
+  font-family: 'Encode Sans Condensed', sans-serif;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end; }
+  .footer .container {
+    text-align: center; }
+  .footer .wordmark {
+    height: 30px; }
+  .footer .boundless {
+    height: 70px;
+    margin: 32px 0; }
+
 .header {
   height: 90px;
   width: 100vw;
@@ -247,13 +297,23 @@ ul {
         -ms-flex-align: center;
             align-items: center; }
   .header .logo {
-    height: 80px;
+    height: 80px; }
+  .header .logo-container {
     -ms-flex-item-align: end;
         align-self: flex-end; }
   .header .wordmark {
     height: 20px;
     margin-top: 10px;
     margin-left: 24px; }
+  .header .boundless-nav {
+    margin-top: 10px;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+    font-size: 18px; }
 
 .hero {
   width: 100%;
@@ -277,8 +337,6 @@ ul {
   @media (max-width: 1150px) {
     .nav {
       display: none; } }
-  .nav::stuck {
-    background-color: #000; }
   .nav .nav-header {
     font-family: 'Encode Sans Condensed', sans-serif;
     font-weight: 900;

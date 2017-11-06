@@ -1,0 +1,22 @@
+.boundless-nav {
+  font-family: 'Encode Sans Condensed', sans-serif;
+  list-style: none;
+  margin-left: 0;
+  display: flex;
+  justify-content: center;
+
+  li {
+    margin-bottom: 0;
+
+    a {
+      text-decoration: none;
+      color: white;
+
+      &::after {
+        content: '/';
+        opacity: 0.5;
+        margin: 0 5px;
+      }
+    }
+  }
+}

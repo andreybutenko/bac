@@ -18,6 +18,10 @@ html, body {
   display: flex;
   flex-direction: row;
 
+  @media (max-width: $break-hide-nav) {
+    flex-direction: column;
+  }
+
   .content {
     flex: 1;
     padding-bottom: 24px;

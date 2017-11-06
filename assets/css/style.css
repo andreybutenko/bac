@@ -20,6 +20,12 @@ html, body {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row; }
+  @media (max-width: 1150px) {
+    .wrapper {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column; } }
   .wrapper .content {
     -webkit-box-flex: 1;
         -ms-flex: 1;
@@ -270,10 +276,15 @@ ul {
   .footer .container {
     text-align: center; }
   .footer .wordmark {
-    height: 30px; }
+    max-height: 30px;
+    max-width: 100%; }
   .footer .boundless {
-    height: 70px;
+    max-height: 70px;
+    max-width: 100%;
     margin: 32px 0; }
+  .footer .boundless-nav {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
 
 .header {
   height: 90px;
@@ -283,6 +294,10 @@ ul {
           box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.4);
   z-index: 999;
   position: relative; }
+  @media (max-width: 1150px) {
+    .header {
+      -webkit-box-shadow: none;
+              box-shadow: none; } }
   .header .container {
     height: 100%;
     width: 1170px;
@@ -305,6 +320,9 @@ ul {
     height: 20px;
     margin-top: 10px;
     margin-left: 24px; }
+    @media (max-width: 700px) {
+      .header .wordmark {
+        display: none; } }
   .header .boundless-nav {
     margin-top: 10px;
     -webkit-box-flex: 1;
@@ -336,7 +354,26 @@ ul {
           box-shadow: 5px 5px 5px 0px rgba(0, 0, 0, 0.2); }
   @media (max-width: 1150px) {
     .nav {
-      display: none; } }
+      width: 100vw;
+      height: auto;
+      max-width: 100vw;
+      margin-top: -2px;
+      z-index: 999; }
+      .nav div.nav-header {
+        position: relative;
+        -webkit-box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.4);
+                box-shadow: 0px 5px 5px 0px rgba(0, 0, 0, 0.4);
+        background-color: white;
+        color: #4b2e83;
+        height: auto;
+        -webkit-transition: 250ms all;
+        transition: 250ms all; }
+        .nav div.nav-header:hover {
+          background-color: #d9d9d9; }
+        .nav div.nav-header span {
+          -webkit-font-smoothing: antialiased !important; }
+      .nav ul:not(.expanded) {
+        display: none; } }
   .nav .nav-header {
     font-family: 'Encode Sans Condensed', sans-serif;
     font-weight: 900;

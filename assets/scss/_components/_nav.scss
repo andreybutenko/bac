@@ -31,6 +31,8 @@
   ul {
     list-style: none;
     margin-left: 0;
+    max-height: calc(100% - #{$header-height});
+    overflow-y: auto;
 
     li {
       margin-bottom: 0;
